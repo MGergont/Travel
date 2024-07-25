@@ -24,6 +24,4 @@ abstract class AbstractController
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $url, true, 303);
         exit;
     }
-
-    //TODO metoda sprawdzająca logowanie
 }

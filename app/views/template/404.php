@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>404</h1>
+    <h3>Coś poszło nie tak, serwer napotkał błąd</h3>
 </body>
 </html>

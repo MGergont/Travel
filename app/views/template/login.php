@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Ta</title>
+    <title>Travel Task</title>
 </head>
 <body>
     <h1>Login</h1>
 
-    <form method="post" action="/login-now">
-        <input type="hidden" name="type" value="login">
-        <input type="text" name="email" placeholder="Email">
-        <input type="password" name="pwd" placeholder="Password">
+    <?php FeedbackMess('login') ?>
+
+    <form method="post" action="/">
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="password" name="pwd" placeholder="Password" required>
         <button type="submit" name="submit">Login</button>
     </form>
 </body>

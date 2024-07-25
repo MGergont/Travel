@@ -34,7 +34,7 @@ class Router {
                 $this->callController($callback, $uri);
             }
         } else {
-            echo "404 Not Found";
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . '/404', true, 303);
         }
     }
 
