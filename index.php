@@ -19,6 +19,15 @@ $router->post('/register', 'RegistrationController@registration', 'Controllers')
 //home
 $router->get('/home', 'HomeController@homeView', 'Controllers');
 
+
+$router->get('/route', 'RouteController@routeView', 'Controllers');
+$router->post('/route', 'RouteController@routeView', 'Controllers');
+
+$router->get('/notes', 'NoteController@noteView', 'Controllers');
+$router->post('/notes', 'NoteController@addNote', 'Controllers');
+$router->post('/notes-del', 'NoteController@dellNote', 'Controllers');
+$router->post('/notes-edit', 'NoteController@editNote', 'Controllers');
+
 //Error
 $router->get('/403', 'ErrorController@Error403', 'Controllers');
 $router->get('/404', 'ErrorController@Error404', 'Controllers');

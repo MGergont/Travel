@@ -1,1 +1,4 @@
 INSERT INTO users (id_users, user_name, phone_number, email, pwd, last_login, user_status) VALUES (NULL, 'Maniu', '123456789', 'qwerty@gmail.pl', '1234567', '2024-07-25 22:21:31', 'aktywne');
+
+
+INSERT INTO notes VALUES (NULL, 'Testowa notatka', 'Lorem ipsummmmmm', '2024-07-27 22:25:45', '2024-07-27 22:25:45', '2');
