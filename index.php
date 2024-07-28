@@ -19,14 +19,22 @@ $router->post('/register', 'RegistrationController@registration', 'Controllers')
 //home
 $router->get('/home', 'HomeController@homeView', 'Controllers');
 
-
+//route
 $router->get('/route', 'RouteController@routeView', 'Controllers');
 $router->post('/route', 'RouteController@routeView', 'Controllers');
 
+//notes
 $router->get('/notes', 'NoteController@noteView', 'Controllers');
 $router->post('/notes', 'NoteController@addNote', 'Controllers');
 $router->post('/notes-del', 'NoteController@dellNote', 'Controllers');
 $router->post('/notes-edit', 'NoteController@editNote', 'Controllers');
+
+//vehicle
+$router->get('/vehicle', 'VehicleController@vehicleView', 'Controllers');
+$router->post('/vehicle', 'VehicleController@addVehicle', 'Controllers');
+$router->post('/vehicle-edit', 'VehicleController@editVehicle', 'Controllers');
+$router->post('/vehicle-del', 'VehicleController@dellVehicle', 'Controllers');
+$router->post('/vehicle-costs', 'VehicleController@addCostVehicle', 'Controllers');
 
 //Error
 $router->get('/403', 'ErrorController@Error403', 'Controllers');

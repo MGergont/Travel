@@ -2,3 +2,7 @@ INSERT INTO users (id_users, user_name, phone_number, email, pwd, last_login, us
 
 
 INSERT INTO notes VALUES (NULL, 'Testowa notatka', 'Lorem ipsummmmmm', '2024-07-27 22:25:45', '2024-07-27 22:25:45', '2');
+
+INSERT INTO `costs` (`id_costs`, `expense_date`, `amount`, `description`, `category`, `id_vehicle`, `id_users`) VALUES (NULL, '2024-07-20', '100.00', 'Myjnia', 'car', '1', '2');
+
+INSERT INTO vehicle VALUES (NULL, '2', 'Audi', 'A4 B7', '2005-01-01 00:00:00.000000', '2.0 Diesel', '250000', NULL, NULL);

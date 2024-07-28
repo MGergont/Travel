@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Task</title>
     <script>
-        function editApart(id, title, content) {
+        function editNote(id, title, content) {
             document.getElementById('edit_id').value = id;
             document.getElementById('edit_title').value = title;
             document.getElementById('edit_content').value = content;
@@ -48,7 +48,7 @@
                     <input type="hidden" name="id" value="<?php echo $apart['id']; ?>">
                     <button type="submit">Delete</button>
                 </form>
-                <button onclick="editApart(
+                <button onclick="editNote(
                 '<?php echo $apart['id'];?>',
                 '<?php echo $apart['title'];?>',
                 '<?php echo $apart['content'];?>'
