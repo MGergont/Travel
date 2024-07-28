@@ -1,3 +1,19 @@
+<?php
+
+function addOneYear($date) {
+    // Tworzymy obiekt DateTime z podanej daty
+    $dateTime = new DateTime($date);
+    
+    // Dodajemy jeden rok
+    $dateTime->modify('+1 year');
+    
+    // Zwracamy zmodyfikowaną datę jako string w tym samym formacie
+    return $dateTime->format('Y-m-d H:i:s');
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -63,6 +79,8 @@
             <p><?php echo $vehicle['engine_car']; ?></p>
             <p><?php echo $vehicle['course']; ?></p>
             <p><?php echo $vehicle['path_photo']; ?></p>
+            <p>Last Service: <?php echo $vehicle['last_service']; ?></p>
+            <p>Next Service: <?php echo addOneYear($vehicle['last_service']); ?></p>
             <p>
                 <form action="/vehicle-del" method="post" style="display:inline;">
                     <input type="hidden" name="id" value="<?php echo $vehicle['id_vehicle']; ?>">
@@ -77,6 +95,10 @@
                 '<?php echo $vehicle['course'];?>',
                 '<?php echo $vehicle['path_photo'];?>'
                 )">Edit</button>
+                <form action="/vehicle-serv" method="post" style="display:inline;">
+                    <input type="hidden" name="id" value="<?php echo $vehicle['id_vehicle']; ?>">
+                    <button type="submit">Service</button>
+                </form>
             </p>
         </div>
         <?php endforeach; ?>

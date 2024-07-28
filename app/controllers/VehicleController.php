@@ -128,6 +128,27 @@ class VehicleController extends AbstractController{
             FeedbackMess("vehiclecost", "Nie udało się usunąć");
             $this->redirect("/vehicle");
         }
+    }
+
+    public function serviceVehicle() : Void{
+        $vehicleMod = new VehicleModel($this->configuration);
+
+        $data = [
+            'id' => $this->request->postParam('id')
+        ];
+
+        if (empty($data['id'])) {
+            FeedbackMess("vehicle", "Wymagany fomularz nie jest uzupełniony");
+            $this->redirect("/vehicle");
+        }
+
+        if($vehicleMod->serviceVehicle($data, $_SESSION['usersId'])){
+            FeedbackMess("vehiclecost", "Udało się ");
+            $this->redirect("/vehicle");
+        }else{
+            FeedbackMess("vehiclecost", "Nie udało się dodać serwisu");
+            $this->redirect("/vehicle");
+        }
 
     }
 }

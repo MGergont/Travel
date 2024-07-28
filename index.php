@@ -35,6 +35,7 @@ $router->post('/vehicle', 'VehicleController@addVehicle', 'Controllers');
 $router->post('/vehicle-edit', 'VehicleController@editVehicle', 'Controllers');
 $router->post('/vehicle-del', 'VehicleController@dellVehicle', 'Controllers');
 $router->post('/vehicle-costs', 'VehicleController@addCostVehicle', 'Controllers');
+$router->post('/vehicle-serv', 'VehicleController@serviceVehicle', 'Controllers');
 
 //Error
 $router->get('/403', 'ErrorController@Error403', 'Controllers');

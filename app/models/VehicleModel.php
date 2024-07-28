@@ -85,4 +85,15 @@ class VehicleModel extends AbstractModel{
             return false;
         }
     }
+
+    public function serviceVehicle($data, $id){
+        $this->query('UPDATE vehicle SET last_service = NOW() WHERE id_vehicle = :Idvehicle AND id_users = :id');
+        $this->bind(':Idvehicle', $data['id']);
+        $this->bind(':id', $id);
+        if($this->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
