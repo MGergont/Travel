@@ -21,7 +21,12 @@ $router->get('/home', 'HomeController@homeView', 'Controllers');
 
 //route
 $router->get('/route', 'RouteController@routeView', 'Controllers');
-$router->post('/route', 'RouteController@routeView', 'Controllers');
+$router->post('/route-castom-start', 'RouteController@startRoute', 'Controllers');
+$router->post('/route-castom-next', 'RouteController@startNextRoute', 'Controllers');
+$router->get('/route-castom-stop', 'RouteController@stopRoute', 'Controllers');
+$router->get('/route-castom-end', 'RouteController@endRoute', 'Controllers');
+
+$router->get('/route-cost', 'RouteController@endRoute', 'Controllers');
 
 //notes
 $router->get('/notes', 'NoteController@noteView', 'Controllers');

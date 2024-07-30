@@ -14,6 +14,6 @@
     <a href="/statistics">Statistics</a><br>
     <a href="/notes">Notes</a><br>
 
-    <a href="/logout">Wylogój</a>
+    <a href="/logout">Wyloguj</a>
 </body>
 </html>
