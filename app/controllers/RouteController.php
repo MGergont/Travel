@@ -71,22 +71,31 @@ class RouteController extends AbstractController{
 
     public function addCost() : Void{
         $routeMod = new RouteModel($this->configuration);
-        
-        $_SESSION['stopTrip'] = $this->getCurrentDateTime();
 
         $data = [
-            'id_del' => $_SESSION['id_del'],
-            'StartRoute' => $_SESSION['StartRoute'],
-            'Distance' => $_SESSION['Distance'],
-            'StopRoute' => $_SESSION['StopRoute'],
-            'startTrip' => $_SESSION['startTrip'],
-            'stopTrip' => $_SESSION['stopTrip']
+            'amount' => trim($this->request->postParam('amount')),
+            'description' => trim($this->request->postParam('descript')),
+            'id' => $_SESSION['id_del'],
+
         ];
 
-        $routeMod->addTrip($data, $_SESSION['usersId']);
+        if (empty($data['amount']) || empty($data['description'])) {
+            FeedbackMess("route", "Wymagany fomularz nie jest uzupełniony");
+            $this->redirect("/route");
+        }
 
-        $_SESSION['statusDel'] = "next";
-        $this->redirect("/route");
+        if(preg_match('/^[0-9]{9,15}$/', $data['amount'])){
+            FeedbackMess("route", "Niepoprawny znak");
+            $this->redirect("/route");
+        }
+
+        if($routeMod->addCost($data, $_SESSION['usersId'])){
+            FeedbackMess("route", "Udało się ");
+            $this->redirect("/route");
+        }else{
+            FeedbackMess("route", "Nie udało się usunąć");
+            $this->redirect("/route");
+        }
     }
 
     public function endRoute() : Void{

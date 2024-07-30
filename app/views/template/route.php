@@ -44,12 +44,15 @@
             }
         ?>
 
-<!-- to ma się pokazać gdzy w sesji pojawi się id travel -->
+    <?php FeedbackMess('route') ?>    
+    <p>Start a route to add costs</p>
+    <?php if($_SESSION['statusDel'] != 'start'): ?>
     <p>Add cost</p>
-    <form method="post" action="">
-        <input type="text" name="StartRoute" placeholder="Start location" required>
-        <input type="text" name="StopRoute" placeholder="Stop location" required>
+    <form method="post" action="/route-cost">
+        <input type="number" name="amount" placeholder="Koszt" required>
+        <input type="text" name="descript" placeholder="Opis" required>
         <button type="submit" name="submit">Start</button>
     </form>
+    <?php endif; ?>
 </body>
 </html>

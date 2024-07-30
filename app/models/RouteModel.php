@@ -55,4 +55,20 @@ class RouteModel extends AbstractModel{
             return false;
         }
     }
+
+    public function addCost(array $data, int $id){
+
+        $this->query('INSERT INTO costs VALUES (NULL, NOW(), :amount, :description, "route", NULL, :Idvehicle, :id);');
+        
+        $this->bind(':amount', $data['amount']);
+        $this->bind(':description', $data['description']);
+        $this->bind(':Idvehicle', $data['id']);
+        $this->bind(':id', $id);
+        
+        if($this->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

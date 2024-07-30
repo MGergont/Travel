@@ -26,7 +26,7 @@ $router->post('/route-castom-next', 'RouteController@startNextRoute', 'Controlle
 $router->get('/route-castom-stop', 'RouteController@stopRoute', 'Controllers');
 $router->get('/route-castom-end', 'RouteController@endRoute', 'Controllers');
 
-$router->get('/route-cost', 'RouteController@endRoute', 'Controllers');
+$router->post('/route-cost', 'RouteController@addCost', 'Controllers');
 
 //notes
 $router->get('/notes', 'NoteController@noteView', 'Controllers');

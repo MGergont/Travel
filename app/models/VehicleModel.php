@@ -29,7 +29,7 @@ class VehicleModel extends AbstractModel{
 
     public function addCost(array $data, int $id){
 
-        $this->query('INSERT INTO costs VALUES (NULL, NOW(), :amount, :description, "car", :Idvehicle, :id);');
+        $this->query('INSERT INTO costs VALUES (NULL, NOW(), :amount, :description, "car", :Idvehicle, NULL, :id);');
         
         $this->bind(':amount', $data['amount']);
         $this->bind(':description', $data['description']);
