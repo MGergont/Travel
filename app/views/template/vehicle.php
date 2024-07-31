@@ -1,13 +1,13 @@
 <?php
 
 function addOneYear($date) {
-    // Tworzymy obiekt DateTime z podanej daty
+    
     $dateTime = new DateTime($date);
     
-    // Dodajemy jeden rok
+    
     $dateTime->modify('+1 year');
     
-    // Zwracamy zmodyfikowaną datę jako string w tym samym formacie
+    
     return $dateTime->format('Y-m-d H:i:s');
 }
 
