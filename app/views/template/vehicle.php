@@ -38,6 +38,8 @@ function addOneYear($date) {
     </script>
 </head>
 <body>
+    <a href="/home">< Back</a><br>
+
     <h1>Vehicle panel</h1>
 
     <?php FeedbackMess('vehicle') ?>

@@ -6,6 +6,8 @@
     <title>Travel Task</title>
 </head>
 <body>
+    <a href="/home">< Back</a><br>
+
     <h1>Settings</h1>
 
     <h3>Profil</h3><br>

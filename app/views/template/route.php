@@ -6,6 +6,8 @@
     <title>Travel Task</title>
 </head>
 <body>
+    <a href="/home">< Back</a><br>
+
     <h1>Route</h1>
         <?php
             switch ($_SESSION['statusDel']) {

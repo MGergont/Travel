@@ -14,6 +14,8 @@
     </script>
 </head>
 <body>
+    <a href="/home">< Back</a><br>
+
     <h1>Note</h1>
 
     <?php FeedbackMess('note') ?>
