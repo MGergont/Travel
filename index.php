@@ -42,6 +42,14 @@ $router->post('/vehicle-del', 'VehicleController@dellVehicle', 'Controllers');
 $router->post('/vehicle-costs', 'VehicleController@addCostVehicle', 'Controllers');
 $router->post('/vehicle-serv', 'VehicleController@serviceVehicle', 'Controllers');
 
+//statistics
+$router->get('/statistics', 'StatisticController@statisticView', 'Controllers');
+
+//settings
+$router->get('/settings', 'SettingsController@settingsView', 'Controllers');
+$router->post('/settings', 'SettingsController@userDataChange', 'Controllers');
+$router->post('/pass-change', 'SettingsController@userPassChange', 'Controllers');
+
 //Error
 $router->get('/403', 'ErrorController@Error403', 'Controllers');
 $router->get('/404', 'ErrorController@Error404', 'Controllers');
