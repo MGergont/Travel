@@ -12,7 +12,7 @@ class View
 		require_once("./app/views/template/$page.php");
 	}
 
-	private function escape(array $params): array
+	public function escape(array $params): array
 	{
 		$clearParams = [];
 		
