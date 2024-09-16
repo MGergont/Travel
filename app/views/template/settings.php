@@ -20,8 +20,6 @@
     <form method="post" action="/settings">
         <label>First name</label>
         <input type="text" name="firstName" value="<?php echo $params['user']['user_name'] ?>" required>
-        <label>Last name</label>
-        <input type="text" name="lastName" value="<?php echo $params['user']['user_last_name'] ?>" required>
         <label>Phone number</label>
         <input type="text" name="phone" value="<?php echo $params['user']['phone_number'] ?>" required>
 
@@ -40,6 +38,5 @@
 
         <button type="submit" name="submit">Change</button>
     </form>
-    
 </body>
 </html>
